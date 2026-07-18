@@ -15,6 +15,17 @@
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "expo-env.d.ts",
+    "store/authStore.js",
+    "src/app/_layout.jsx",
+    "src/app/(tabs)/profile.jsx",
+    "src/app/(tabs)/index.jsx",
+    "src/app/(tabs)/Explore.jsx",
+    "src/app/(tabs)/create.jsx",
+    "src/app/(tabs)/_layout.jsx",
+    "constants/color.js",
+    "src/app/(auth)/signup.jsx",
+    "lib/supabase.js",
+    "src/app/(auth)/_layout.jsx"
   ]
 }
