@@ -1,15 +1,39 @@
 import { API_KEY, BASE_URL } from "../constants/api";
 
-export const searchMovies = async (search) => {
-    try {
-        const response = await fetch(
-            `${BASE_URL}?apikey=${API_KEY}&s=${search}`
-        );
 
-        const data = await response.json();
+// Trending movies list
+export const getTrendingMovies = async () => {
+    const response = await fetch(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}`);
+    const data = await response.json();
 
-        return data;
-    } catch (error) {
-        console.log(error);
-    }
-};
+    return data;
+}
+
+
+// TopRatedMovies movies list
+
+export const getTopRatedMovies = async () => {
+    const response = await fetch(`${BASE_URL}/movie/top_rated?api_key=${API_KEY}`);
+    const data = await response.json();
+
+    return data;
+}
+
+
+// PopularMovies movies list
+
+export const getPopularMovies = async () => {
+    const response = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}`);
+    const data = await response.json();
+
+    return data;
+}
+
+// searchMovies movies list
+
+export const searchMovies = async (query) => {
+    const response = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}`);
+    const data = await response.json();
+
+    return data;
+}

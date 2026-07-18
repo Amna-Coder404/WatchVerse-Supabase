@@ -32,6 +32,7 @@ export const useAuthStore = create((set) => ({
             }
 
             set({ user, session: data.session, loading: false });
+            return data;
         }
     },
 
@@ -81,5 +82,24 @@ export const useAuthStore = create((set) => ({
         return subscription.unsubscribe;
 
     },
+
+    // Get Current User Profile
+    getProfile: async () => {
+        const {
+            data: { user }, } = await supabase.auth.getUser();
+
+        if (!user) return null;
+
+        const { data, error } = await supabase
+            .from("profiles")
+            .select("*")
+            .eq("id", user.id)
+            .single();
+
+        if (error) throw error;
+
+        return data;
+    },
+
 
 }))

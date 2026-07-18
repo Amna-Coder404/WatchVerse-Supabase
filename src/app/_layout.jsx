@@ -24,20 +24,20 @@ const RootLayout = () => {
 
 
   // // Auto  navigation 
-  // useEffect(() => {
-  //   if (loading) return;
-  //   const inAuthGroup = segments[0] === "(auth)";
+  useEffect(() => {
+    if (loading) return;
+    const inAuthGroup = segments[0] === "(auth)";
 
-  //   if (!user && !inAuthGroup) {
-  //     router.replace("/(auth)");
-  //   }
+    if (!user && !inAuthGroup) {
+      router.replace("/(auth)");
+    }
 
-  //   if (user && inAuthGroup) {
+    if (user && inAuthGroup) {
 
-  //     router.replace("/(tabs)");
+      router.replace("/(tabs)");
 
-  //   }
-  // }, [user, loading, segments]);
+    }
+  }, [user, loading, segments]);
 
   if (loading) return <Loader />
 

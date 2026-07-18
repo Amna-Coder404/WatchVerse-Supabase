@@ -6,6 +6,7 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: COLORS.background,
         paddingHorizontal: 18,
+
     },
 
     header: {
@@ -23,6 +24,7 @@ export default StyleSheet.create({
         color: COLORS.textPrimary,
         fontSize: 30,
         fontWeight: "700",
+        paddingBottom: 20
     },
 
     subHeading: {
@@ -50,13 +52,13 @@ export default StyleSheet.create({
         borderRadius: 18,
         paddingHorizontal: 16,
     },
-
     movieCard: {
         width: 150,
         backgroundColor: COLORS.cardBackground,
         borderRadius: 20,
         overflow: "hidden",
         marginRight: 16,
+        marginBottom: 12
     },
 
     poster: {
@@ -66,14 +68,36 @@ export default StyleSheet.create({
 
     movieTitle: {
         color: COLORS.white,
-        fontWeight: "600",
         fontSize: 15,
-        padding: 12,
+        fontWeight: "600",
     },
 
     rating: {
         color: COLORS.gold,
-        paddingHorizontal: 12,
-        paddingBottom: 12,
+        marginTop: 4,
+        fontWeight: "500",
+    },
+
+    // NOT FOUND component
+    notFoundContainer: {
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: 50,
+    },
+
+    notFoundEmoji: {
+        fontSize: 50,
+    },
+
+    notFoundText: {
+        color: COLORS.white,
+        fontSize: 20,
+        fontWeight: "bold",
+        marginTop: 10,
+    },
+
+    notFoundSubText: {
+        color: COLORS.white,
+        marginTop: 5,
     },
 });
