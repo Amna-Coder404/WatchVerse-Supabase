@@ -40,15 +40,7 @@ const TabLayout = () => {
                 }}
             />
 
-            <Tabs.Screen
-                name="create"
-                options={{
-                    title: "Add",
-                    tabBarIcon: ({ color, size }) => (
-                        <Ionicons name="add-circle" color={color} size={size} />
-                    ),
-                }}
-            />
+
 
             <Tabs.Screen
                 name="watchlist"

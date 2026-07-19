@@ -21,7 +21,6 @@ const Home = () => {
     const [search, setSearch] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [searchLoading, setSearchLoading] = useState(false);
 
     const [trending, setTrending] = useState([]);
     const [popular, setPopular] = useState([]);
@@ -61,14 +60,11 @@ const Home = () => {
 
 
 
-
-
-
-
     useEffect(() => {
         loadHomeData();
         loadProfile();
     }, []);
+
     const loadProfile = async () => {
         const data = await getProfile();
         setProfile(data);
@@ -120,6 +116,7 @@ const Home = () => {
             {
                 search.trim() && notFound ? (
                     <NotFound
+                        image={require("../../../assets/images/no-search.png")}
                         text="No movies found"
                         subText="Try searching with another movie name"
                     />

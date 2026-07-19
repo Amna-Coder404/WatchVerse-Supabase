@@ -1,10 +1,14 @@
-import { Text, View } from 'react-native'
-import styles from "../styles/home.style"
+import { Image, Text, View } from "react-native";
+import styles from "../styles/home.style";
 
-const NotFound = ({ text, subText }) => {
+const NotFound = ({ text, subText, image }) => {
     return (
         <View style={styles.notFoundContainer}>
-            <Text style={styles.notFoundEmoji}>😢</Text>
+            <Image
+                source={image}
+                style={styles.notFoundImage}
+                resizeMode="contain"
+            />
 
             <Text style={styles.notFoundText}>
                 {text}
@@ -14,7 +18,7 @@ const NotFound = ({ text, subText }) => {
                 {subText}
             </Text>
         </View>
-    )
-}
+    );
+};
 
-export default NotFound
+export default NotFound;

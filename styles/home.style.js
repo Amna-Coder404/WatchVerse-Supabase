@@ -100,4 +100,9 @@ export default StyleSheet.create({
         color: COLORS.white,
         marginTop: 5,
     },
+    notFoundImage: {
+        width: 220,
+        height: 220,
+        marginBottom: 20,
+    },
 });

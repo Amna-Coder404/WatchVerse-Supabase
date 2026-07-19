@@ -37,3 +37,21 @@ export const searchMovies = async (query) => {
 
     return data;
 }
+
+// Movie Detail
+export const getMovieDetails = async (id) => {
+    const response = await fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`);
+    const data = await response.json();
+
+    return data;
+}
+
+
+// Movie Credits
+export const getMovieCredits = async (id) => {
+    const response = await fetch(`${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}`);
+    const data = await response.json();
+
+    return data;
+}
+

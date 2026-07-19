@@ -27,6 +27,7 @@
     "src/app/(auth)/signup.jsx",
     "lib/supabase.js",
     "src/app/(auth)/_layout.jsx",
-    "components/SafeScreen.jsx"
+    "components/SafeScreen.jsx",
+    "src/app/movie/[id].tsx"
   ]
 }
