@@ -13,7 +13,11 @@ export default StyleSheet.create({
         alignItems: "center",
         backgroundColor: "#111",
     },
-
+    playTitle: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center"
+    },
     backdrop: {
         width: "100%",
         height: 320,
@@ -110,5 +114,21 @@ export default StyleSheet.create({
     },
     buttonIcon: {
         fontWeight: "bold",
-    }
+    },
+    playButton: {
+        width: 56,
+        height: 56,
+        borderRadius: 28,
+        backgroundColor: COLORS.primary,
+        justifyContent: "center",
+        alignItems: "center",
+        alignSelf: "flex-start",
+        marginVertical: 16,
+        elevation: 4, // Android
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+    },
+
 });

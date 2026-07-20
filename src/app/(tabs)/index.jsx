@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons'
 import { useEffect, useState } from 'react'
-import { FlatList, ScrollView, Text, TextInput, View } from 'react-native'
+import { FlatList, RefreshControl, ScrollView, Text, TextInput, View } from 'react-native'
 import COLORS from '../../../constants/color'
 import styles from "../../../styles/home.style"
 
@@ -17,7 +17,7 @@ import { useAuthStore } from '../../../store/authStore'
 const Home = () => {
     const { getProfile } = useAuthStore();
     const [profile, setProfile] = useState(null);
-
+    const [refreshing, setRefreshing] = useState(false);
     const [search, setSearch] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -59,7 +59,6 @@ const Home = () => {
     };
 
 
-
     useEffect(() => {
         loadHomeData();
         loadProfile();
@@ -89,10 +88,24 @@ const Home = () => {
         }
     };
 
-
+    // Refresh then load
+    const onRefresh = async () => {
+        setRefreshing(true);
+        await loadHomeData();
+        setRefreshing(false)
+    }
 
     return (
-        <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+        <ScrollView style={styles.container} showsVerticalScrollIndicator={false}
+            refreshControl={
+                <RefreshControl
+                    refreshing={refreshing}
+                    onRefresh={onRefresh}
+                    colors={[COLORS.primary]} //this is for android
+                    tintColor={COLORS.primary} //this is for IOS
+                />
+            }
+        >
             {/* HEADER */}
             <View style={styles.header}>
                 <Text style={styles.headerText}>

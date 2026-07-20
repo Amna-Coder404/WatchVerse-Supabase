@@ -1,9 +1,13 @@
-import { Text, View } from 'react-native'
+import { View } from 'react-native';
+import { useAuthStore } from '../../../store/authStore';
+import styles from "../../../styles/profile.style";
 
 const Profile = () => {
+    const { getProfile } = useAuthStore();
+    console.log("USEr", getProfile())
     return (
-        <View>
-            <Text>Profile</Text>
+        <View style={styles.container}>
+            {/* <Image source={{uri : user.}} style={styles.avatar} /> */}
         </View>
     )
 }

@@ -55,3 +55,15 @@ export const getMovieCredits = async (id) => {
     return data;
 }
 
+
+
+// Movie Trailer
+export const getMovieVideos = async (id) => {
+    const response = await fetch(
+        `${BASE_URL}/movie/${id}/videos?api_key=${API_KEY}`
+    );
+
+    const data = await response.json();
+
+    return data;
+}

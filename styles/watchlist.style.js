@@ -22,23 +22,26 @@ export default StyleSheet.create({
         borderRadius: 18,
         marginBottom: 18,
         overflow: "hidden",
+        padding: 12
     },
 
     poster: {
         width: 95,
         height: 140,
+        borderRadius: 10,
     },
 
     info: {
         flex: 1,
-        padding: 16,
-        justifyContent: "space-between",
+        marginLeft: 15,
+        position: "relative",
+        gap: 5
     },
-
     title: {
         color: COLORS.white,
         fontSize: 18,
         fontWeight: "700",
+        marginRight: 40
     },
 
     year: {
@@ -54,18 +57,30 @@ export default StyleSheet.create({
         marginTop: 4,
     },
 
+    bookmarkBtn: {
+        position: "absolute",
+        top: 8,
+        right: 10,
+        padding: 4,
+    },
+
     playButton: {
-        marginTop: 53,
-        marginRight: 23,
-        width: 50,
-        height: 50,
-        borderRadius: 25,
-
-        backgroundColor: COLORS.primary,
-
-        justifyContent: "center",
+        marginTop: 15,
+        alignSelf: "flex-start",
+        flexDirection: "row",
         alignItems: "center",
+        backgroundColor: COLORS.primary,
+        paddingHorizontal: 14,
+        paddingVertical: 8,
+        borderRadius: 20,
+        width: "100%",
+        justifyContent: "center"
+    },
 
-        elevation: 6,
-    }
+    playText: {
+        color: COLORS.white,
+        fontSize: 14,
+        fontWeight: "600",
+        marginLeft: 6,
+    },
 });

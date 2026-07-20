@@ -3,11 +3,13 @@ import { supabase } from "../lib/supabase";
 
 // Toggle Watchlist
 export const toggleWatchList = async (userId, movie) => {
+    const movieId = movie.movie_id ?? movie.id;
+
     // check if movie already exits  
     const { data: existing, error: checkError } = await supabase.from("watchlists")
         .select("id").
         eq("user_id", userId).
-        eq("movie_id", movie.id)
+        eq("movie_id", movieId)
         .maybeSingle();
 
     if (checkError) {
@@ -15,12 +17,12 @@ export const toggleWatchList = async (userId, movie) => {
         return false;
     }
 
-    // Remove of already save
+    // Remove if already save
     if (existing) {
         const { error } = await supabase
             .from("watchlists")
             .delete().eq("user_id", userId)
-            .eq("movie_id", movie.id);
+            .eq("movie_id", movieId);
 
         if (error) {
             Alert.alert(error.message || "Failed to remove from watchlist!");
@@ -32,7 +34,7 @@ export const toggleWatchList = async (userId, movie) => {
     // Add if not save
     const { error } = await supabase.from("watchlists").insert({
         user_id: userId,
-        movie_id: movie.id,
+        movie_id: movieId,
         title: movie.title,
         poster_path: movie.poster_path,
         vote_average: movie.vote_average,
@@ -81,3 +83,4 @@ export const getWatchList = async (userId) => {
 
     return data;
 }
+

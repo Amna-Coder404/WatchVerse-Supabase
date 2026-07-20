@@ -28,6 +28,7 @@
     "lib/supabase.js",
     "src/app/(auth)/_layout.jsx",
     "components/SafeScreen.jsx",
-    "src/app/movie/[id].tsx"
+    "src/app/movie/[id].tsx",
+    "components/MovieTabs.jsx"
   ]
 }
