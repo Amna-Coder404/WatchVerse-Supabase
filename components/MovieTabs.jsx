@@ -58,7 +58,7 @@ const MovieTabs = ({
                         contentContainerStyle={styles.scrollContent}
                         showsVerticalScrollIndicator={false}
                     >
-                        <MovieReviews movieId={movie.id} userId={userId} />
+                        <MovieReviews movie={movie} userId={userId} />
                     </ScrollView>
                 );
 

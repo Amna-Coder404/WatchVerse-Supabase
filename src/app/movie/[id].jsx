@@ -94,13 +94,7 @@ export default function MovieDetails() {
                 />
             </View>
 
-            {/* Review Modal */}
-            <ReviewModal
-                visible={visible}
-                movie={movie}
-                user={user}
-                onClose={() => setVisible(false)}
-            />
+
         </View>
     );
 }

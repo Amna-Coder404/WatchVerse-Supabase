@@ -1,13 +1,16 @@
-import { View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { useAuthStore } from '../../../store/authStore';
 import styles from "../../../styles/profile.style";
 
 const Profile = () => {
-    const { getProfile } = useAuthStore();
-    console.log("USEr", getProfile())
+    const { logout } = useAuthStore();
+
     return (
         <View style={styles.container}>
-            {/* <Image source={{uri : user.}} style={styles.avatar} /> */}
+
+            <TouchableOpacity onPress={logout}>
+                <Text style={styles.name}>Logout</Text>
+            </TouchableOpacity>
         </View>
     )
 }

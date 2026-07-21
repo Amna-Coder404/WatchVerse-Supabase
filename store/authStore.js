@@ -23,7 +23,8 @@ export const useAuthStore = create((set) => ({
         if (user) {
             const { error: profileError } = await supabase.from("profiles").insert({
                 id: user.id,
-                username
+                username,
+                avatar_url: "https://i.pravatar.cc/150"
             });
 
             if (profileError) {

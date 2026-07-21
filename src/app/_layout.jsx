@@ -15,16 +15,18 @@ const RootLayout = () => {
   const { user, loading, checkAuth, listenAuth } = useAuthStore();
 
   useEffect(() => {
+
     checkAuth();
-    const unsubscribe = listenAuth();
-    return () => {
-      unsubscribe();
-    };
+    // const unsubscribe = listenAuth();
+    // return () => {
+    //   unsubscribe();
+    // };
   }, []);
 
 
   // // Auto  navigation 
   useEffect(() => {
+
     if (loading) return;
     const inAuthGroup = segments[0] === "(auth)";
 
@@ -47,7 +49,7 @@ const RootLayout = () => {
       <SafeScreen>
         <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name='(tabs)' />
-          {/* <Stack.Screen name='(auth)' /> */}
+          <Stack.Screen name='(auth)' />
         </Stack>
       </SafeScreen>
     </SafeAreaProvider>

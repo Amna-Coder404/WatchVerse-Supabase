@@ -25,7 +25,13 @@ export const createReview = async (userId, movieId, review, rating) => {
 export const getMovieReviews = async (movieId) => {
     const { data, error } = await supabase
         .from("reviews")
-        .select("*")
+        .select(`
+            *,
+            profiles(
+                username,
+                avatar_url
+            )
+        `)
         .eq("movie_id", movieId)
         .order("created_at", { ascending: false });
 
@@ -79,10 +85,17 @@ export const getMyReview = async (userId, movieId) => {
 
     const { data, error } = await supabase
         .from("reviews")
-        .select("*")
+        .select(`
+            *,
+            profiles(
+                username,
+                avatar_url
+            )
+        `)
         .eq("user_id", userId)
         .eq("movie_id", movieId)
         .maybeSingle();
+
 
     if (error) {
         Alert.alert("ERROR", error.message);

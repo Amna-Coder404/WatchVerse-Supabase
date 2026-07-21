@@ -94,85 +94,163 @@ const styles = StyleSheet.create({
         zIndex: 10,
 
     },
+
+    // REVIEW CONTAINER
     reviewContainer: {
         paddingHorizontal: 16,
         paddingBottom: 30,
     },
 
+    addReview: {
+        backgroundColor: COLORS.primary,
+        paddingVertical: 16,
+        borderRadius: 16,
+        alignItems: "center",
+        justifyContent: "center",
+        marginVertical: 16,
 
-    heading: {
-        fontSize: 22,
-        fontWeight: "700",
-        color: "#fff",
-        marginBottom: 16,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 6,
+        elevation: 5,
     },
 
+    addReviewText: {
+        color: COLORS.white,
+        fontSize: 16,
+        fontWeight: "700",
+        letterSpacing: 0.5,
+    },
+    myReviewCard: {
+        backgroundColor: "#1F2937",
+        borderRadius: 12,
+        padding: 15,
+        marginVertical: 15,
+    },
 
-    empty: {
-        color: "#999",
+    reviewTitle: {
+        color: "#fff",
+        fontSize: 18,
+        fontWeight: "700",
+        marginBottom: 10,
+    },
+
+    reviewText: {
+        color: "#E5E7EB",
         fontSize: 15,
-        textAlign: "center",
+        lineHeight: 22,
+    },
+
+    reviewRating: {
+        color: "#FFD700",
+        marginTop: 10,
+        fontWeight: "600",
+    },
+
+    actionRow: {
+        flexDirection: "row",
+        marginTop: 18,
+    },
+
+    editButton: {
+        flex: 1,
+        backgroundColor: "#2563EB",
+        padding: 12,
+        borderRadius: 8,
+        alignItems: "center",
+        marginRight: 8,
+    },
+
+    deleteButton: {
+        flex: 1,
+        backgroundColor: "#DC2626",
+        padding: 12,
+        borderRadius: 8,
+        alignItems: "center",
+    },
+
+    actionText: {
+        color: "#fff",
+        fontWeight: "600",
+    },
+
+    ReviewCard: {
+        backgroundColor: "#111827",
+        padding: 15,
+        borderRadius: 12,
+        marginTop: 12,
+    },
+
+    username: {
+        color: "#fff",
+        fontSize: 18,
+        fontWeight: "700",
+    },
+
+    reviewText: {
+        color: "#ddd",
+        marginTop: 8,
+        fontSize: 15,
+    },
+
+    reviewRating: {
+        color: "#f4b400",
+        marginTop: 8,
+    },
+
+    actionRow: {
+        flexDirection: "row",
+        gap: 12,
         marginTop: 20,
     },
 
-
-    reviewCard: {
-        backgroundColor: "#1c1c1e",
-        borderRadius: 14,
-        padding: 16,
-        marginBottom: 14,
-    },
-
-
-    myReviewCard: {
-        borderWidth: 1,
-        borderColor: "#f4b400",
-        backgroundColor: "#222",
-    },
-
-
-    myReviewTitle: {
-        color: "#f4b400",
-        fontSize: 14,
-        fontWeight: "700",
-        marginBottom: 10,
-    },
-
-
-    ratingRow: {
+    editButton: {
+        flex: 1,
         flexDirection: "row",
         alignItems: "center",
-        marginBottom: 10,
+        justifyContent: "center",
+
+        backgroundColor: COLORS.card, // or COLORS.surface
+
+        paddingVertical: 14,
+        borderRadius: 14,
+
+        borderWidth: 1,
+        borderColor: "rgba(255,255,255,0.08)",
     },
 
+    deleteButton: {
+        flex: 1,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
 
-    reviewText: {
-        color: "#fff",
+        backgroundColor: "rgba(255,107,107,0.12)",
+
+        paddingVertical: 14,
+        borderRadius: 14,
+
+        borderWidth: 1,
+        borderColor: "rgba(255,107,107,0.25)",
+    },
+
+    actionText: {
+        color: COLORS.white,
         fontSize: 15,
-        lineHeight: 22,
-        marginBottom: 12,
-    },
-
-
-    date: {
-        color: "#888",
-        fontSize: 12,
-    },
-
-
-    userReviewSection: {
-        marginBottom: 20,
-    },
-
-
-    sectionTitle: {
-        color: "#fff",
-        fontSize: 17,
         fontWeight: "600",
-        marginBottom: 10,
+        marginLeft: 8,
     },
 
-
+    deleteText: {
+        color: "#FF6B6B",
+        fontSize: 15,
+        fontWeight: "600",
+        marginLeft: 8,
+    },
 });
 
 export default styles;

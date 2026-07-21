@@ -1,13 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Modal, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import { Ionicons } from "@expo/vector-icons";
 import { Alert } from "react-native";
-import COLORS from "../constants/color"; // adjust path
-import { createReview } from "../services/review";
-import styles from "../styles/review.style"; // adjust path
+import COLORS from "../constants/color";
+import { createReview, updateReview } from "../services/review";
+import styles from "../styles/review.style";
 
-const ReviewModal = ({ movie, user, onClose, visible }) => {
+
+
+
+
+const ReviewModal = ({ movie, userId, onClose, visible, review, onSuccess }) => {
     const [caption, setCaption] = useState("");
     const [rating, setRating] = useState(0);
 
@@ -28,6 +32,12 @@ const ReviewModal = ({ movie, user, onClose, visible }) => {
 
         return <View style={styles.ratingContainer}>{stars}</View>
     }
+    useEffect(() => {
+        if (visible) {
+            setCaption(review?.review || "");
+            setRating(review?.rating || 0);
+        }
+    }, [visible, review]);
 
     // Handle Submit Button
     const handleSubmit = async () => {
@@ -36,20 +46,32 @@ const ReviewModal = ({ movie, user, onClose, visible }) => {
             return;
         }
 
-        const review = await createReview(
-            user.id,
-            movie.id,
-            caption,
-            rating
-        );
+        if (review) {
+            const success = await updateReview(
+                review.id,
+                caption,
+                rating
+            )
 
-        if (!review) return;
+            if (!success) return;
+            Alert.alert("Success", "Review updated.");
+        } else {
+            const newReview = await createReview(
+                userId,
+                movie.id,
+                caption,
+                rating
+            );
 
-        Alert.alert("Success", "Review added successfully")
+            if (!newReview) return;
+
+            Alert.alert("Success", "Review added successfully")
+        }
+
 
         setCaption("");
         setRating(0);
-        onClose();
+        onSuccess();
     }
 
 
@@ -92,7 +114,7 @@ const ReviewModal = ({ movie, user, onClose, visible }) => {
 
                         <TouchableOpacity onPress={handleSubmit} style={styles.submitButton}>
                             <Text style={styles.submitText}>
-                                Submit Review
+                                {review ? "Update Review" : "Submit Review"}
                             </Text>
                         </TouchableOpacity>
                     </View>
