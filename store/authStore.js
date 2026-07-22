@@ -7,7 +7,7 @@ export const useAuthStore = create((set) => ({
     user: null,
     session: null,
     loading: true,
-
+    profile: null,
     // SIGN-UP
     signup: async (email, password, username,) => {
         set({ loading: true });
@@ -21,18 +21,25 @@ export const useAuthStore = create((set) => ({
         const user = data.user;
 
         if (user) {
-            const { error: profileError } = await supabase.from("profiles").insert({
-                id: user.id,
-                username,
-                avatar_url: "https://i.pravatar.cc/150"
-            });
+            const { error: profileError } = await supabase
+                .from("profiles")
+                .insert({
+                    id: user.id,
+                    username,
+                    avatar_url: null
+                });
 
             if (profileError) {
                 set({ loading: false });
                 throw profileError;
             }
 
-            set({ user, session: data.session, loading: false });
+            set({
+                user,
+                session: data.session,
+                loading: false
+            });
+
             return data;
         }
     },
@@ -87,9 +94,10 @@ export const useAuthStore = create((set) => ({
     // Get Current User Profile
     getProfile: async () => {
         const {
-            data: { user }, } = await supabase.auth.getUser();
+            data: { user },
+        } = await supabase.auth.getUser();
 
-        if (!user) return null;
+        if (!user) return;
 
         const { data, error } = await supabase
             .from("profiles")
@@ -98,6 +106,8 @@ export const useAuthStore = create((set) => ({
             .single();
 
         if (error) throw error;
+
+        set({ profile: data });
 
         return data;
     },

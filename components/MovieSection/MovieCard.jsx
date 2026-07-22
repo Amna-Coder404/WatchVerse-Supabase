@@ -1,7 +1,7 @@
 import { useRouter } from 'expo-router';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
-import { IMAGE_BASE_URL } from '../constants/api';
-import styles from "../styles/home.style";
+import { IMAGE_BASE_URL } from '../../constants/api';
+import styles from "../../styles/home.style";
 
 
 const MovieCard = ({ movie }) => {

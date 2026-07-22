@@ -4,8 +4,8 @@ import { FlatList, RefreshControl, ScrollView, Text, TextInput, View } from 'rea
 import COLORS from '../../../constants/color'
 import styles from "../../../styles/home.style"
 
-import MovieCard from "../../../components/MovieCard"
-import MovieSection from "../../../components/MovieSection"
+import MovieCard from "../../../components/MovieSection/MovieCard"
+import MovieSection from "../../../components/MovieSection/MovieSection"
 import NotFound from "../../../components/NotFound"
 import {
     getPopularMovies,

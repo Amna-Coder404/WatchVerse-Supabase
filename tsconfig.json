@@ -29,6 +29,6 @@
     "src/app/(auth)/_layout.jsx",
     "components/SafeScreen.jsx",
     "src/app/movie/[id].tsx",
-    "components/MovieTabs.jsx"
+    "components/MovieSection/MovieTabs.jsx"
   ]
 }

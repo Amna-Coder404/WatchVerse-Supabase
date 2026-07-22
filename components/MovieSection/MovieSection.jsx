@@ -1,6 +1,6 @@
 import { FlatList, Text, View } from "react-native";
-import styles from "../styles/home.style";
-import Loader from "./Loader";
+import styles from "../../styles/home.style";
+import Loader from "../Loader";
 import MovieCard from "./MovieCard";
 
 

@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import { Alert, Image, TouchableOpacity, View } from "react-native";
 
 import Loader from "../../../components/Loader";
-import MovieTabs from "../../../components/MovieTabs";
-import ReviewModal from "../../../components/ReviewModal";
+import MovieTabs from "../../../components/MovieSection/MovieTabs";
 
 import { IMAGE_BASE_URL } from "../../../constants/api";
 import { getMovieCredits, getMovieDetails } from "../../../services/movieApi";

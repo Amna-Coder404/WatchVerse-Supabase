@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Dimensions, ScrollView, Text } from "react-native";
 import { TabBar, TabView } from "react-native-tab-view";
 
+import MovieReviews from "../../components/MovieSection/MovieReviews";
 import MovieOverview from "./MovieOverview";
-import MovieReviews from "./MovieReviews";
 
-import styles from "../styles/movieTabs.style";
+import styles from "../../styles/movieTabs.style";
 
 const initialLayout = {
     width: Dimensions.get("window").width,

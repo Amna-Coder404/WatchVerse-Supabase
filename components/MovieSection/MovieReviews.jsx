@@ -1,11 +1,11 @@
 import { useCallback, useState } from "react";
 import { Alert, Image, Text, TouchableOpacity, View } from "react-native";
-import { DeleteReview, getMovieReviews, getMyReview } from "../services/review";
-import styles from "../styles/review.style";
+import { DeleteReview, getMovieReviews, getMyReview } from "../../services/review";
+import styles from "../../styles/review.style";
 
 import { Ionicons } from "@expo/vector-icons";
 import { useFocusEffect } from "expo-router";
-import ReviewModal from "../components/ReviewModal";
+import ReviewModal from "../../components/MovieSection/ReviewModal";
 
 const MovieReviews = ({ userId, movie }) => {
     const [reviews, setReviews] = useState([]);

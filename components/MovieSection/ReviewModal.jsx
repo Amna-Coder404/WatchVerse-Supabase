@@ -3,9 +3,9 @@ import { Modal, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import { Ionicons } from "@expo/vector-icons";
 import { Alert } from "react-native";
-import COLORS from "../constants/color";
-import { createReview, updateReview } from "../services/review";
-import styles from "../styles/review.style";
+import COLORS from "../../constants/color";
+import { createReview, updateReview } from "../../services/review";
+import styles from "../../styles/review.style";
 
 
 

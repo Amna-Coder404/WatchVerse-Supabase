@@ -1,10 +1,10 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 
-import COLORS from "../constants/color";
-import styles from "../styles/movieDetail.style";
+import COLORS from "../../constants/color";
+import styles from "../../styles/movieDetail.style";
 
-import { formatRuntime, handlePlayVideo } from "../lib/utils";
+import { formatRuntime, handlePlayVideo } from "../../lib/utils";
 
 
 const MovieOverview = ({
