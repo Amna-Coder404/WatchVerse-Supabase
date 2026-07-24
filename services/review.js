@@ -81,6 +81,7 @@ export const DeleteReview = async (reviewId) => {
 }
 
 
+
 export const getMyReview = async (userId, movieId) => {
 
     const { data, error } = await supabase
@@ -95,6 +96,25 @@ export const getMyReview = async (userId, movieId) => {
         .eq("user_id", userId)
         .eq("movie_id", movieId)
         .maybeSingle();
+
+
+    if (error) {
+        Alert.alert("ERROR", error.message);
+        return null;
+    }
+
+    return data;
+}
+
+// Get moive Where I add my reviews
+export const getMyReviews = async (userId) => {
+
+    const { data, error } = await supabase
+        .from("reviews")
+        .select("*")
+        .eq("user_id", userId)
+        .order("created_at", { ascending: false });
+
 
 
     if (error) {

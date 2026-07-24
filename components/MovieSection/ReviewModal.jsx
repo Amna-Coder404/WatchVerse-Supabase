@@ -10,7 +10,7 @@ import styles from "../../styles/review.style";
 
 
 
-
+// This Modal use for add Review
 const ReviewModal = ({ movie, userId, onClose, visible, review, onSuccess }) => {
     const [caption, setCaption] = useState("");
     const [rating, setRating] = useState(0);

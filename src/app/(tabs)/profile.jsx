@@ -49,12 +49,14 @@ const Profile = () => {
 
 
             <TouchableOpacity style={styles.menuCard}
-                onPress={() => router.push({
-                    pathname: "/(tabs)/watchlist",
-                    params: {
-                        tab: "reviews"
-                    }
-                })}
+                onPress={() =>
+                    router.push({
+                        pathname: "/watchlist",
+                        params: {
+                            tab: "reviews"
+                        }
+                    })
+                }
             >
                 <Ionicons name="star-outline" size={26} color={COLORS.primary} />
                 <View style={styles.menuTextContainer}>

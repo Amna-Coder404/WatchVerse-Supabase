@@ -10,7 +10,11 @@ export default StyleSheet.create({
     header: {
         paddingBottom: 20,
     },
-
+    reviewContent: {
+        flexDirection: "row",
+        flex: 1,
+        alignItems: "center",
+    },
     headerTitle: {
         fontSize: 28,
         fontWeight: "bold",
@@ -83,4 +87,21 @@ export default StyleSheet.create({
         fontWeight: "600",
         marginLeft: 6,
     },
+    reviewPoster: {
+        width: 70,
+        height: 100,
+        borderRadius: 8,
+    },
+
+    review: {
+        fontSize: 14,
+        marginBottom: 8,
+        color: COLORS.white,
+    },
+    time: {
+        fontSize: 12,
+        opacity: 0.7,
+        color: "#9CA3AF",
+    },
+
 });
