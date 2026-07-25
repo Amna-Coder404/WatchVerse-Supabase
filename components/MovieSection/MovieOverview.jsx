@@ -5,6 +5,7 @@ import COLORS from "../../constants/color";
 import styles from "../../styles/movieDetail.style";
 
 import { formatRuntime, handlePlayVideo } from "../../lib/utils";
+import AppButton from "../AppButton";
 
 
 const MovieOverview = ({
@@ -34,6 +35,7 @@ const MovieOverview = ({
                         color={COLORS.white}
                     />
                 </TouchableOpacity>
+
             </View>
 
 
@@ -105,32 +107,11 @@ const MovieOverview = ({
                 }
 
             </ScrollView>
-
-
-
-            <TouchableOpacity
-                style={styles.button}
+            <AppButton
+                title={isSaved ? "Remove from Watchlist" : "Add to Watchlist"}
                 onPress={handleToggleWatch}
-            >
-
-                <Ionicons
-                    name={isSaved ? "remove-circle" : "add-circle"}
-                    size={22}
-                    color={COLORS.white}
-                />
-
-
-                <Text style={styles.buttonText}>
-                    {
-                        isSaved
-                            ? "Remove from Watchlist"
-                            : "Add to Watchlist"
-                    }
-                </Text>
-
-            </TouchableOpacity>
-
-
+                icon={isSaved ? "minus-circle" : "plus-circle"}
+            />
         </View>
     )
 }

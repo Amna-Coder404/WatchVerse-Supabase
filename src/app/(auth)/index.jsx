@@ -1,8 +1,7 @@
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
-import { useState } from 'react';
-import { ActivityIndicator, Alert, ImageBackground, Text, TextInput, TouchableOpacity, View } from 'react-native';
-
 import { Link } from 'expo-router';
+import { useState } from 'react';
+import { ActivityIndicator, Alert, ImageBackground, KeyboardAvoidingView, Platform, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import COLORS from '../../../constants/color';
 import { useAuthStore } from "../../../store/authStore";
 import styles from "../../../styles/login.style";
@@ -39,69 +38,71 @@ const Login = () => {
             style={styles.background}
             resizeMode="cover"
         >
-            <View style={styles.overlay}>
-                <View style={styles.logoContainer}>
-                    <MaterialIcons name="movie-creation" size={40} color={COLORS.primary} />
-                </View>
-                <Text style={styles.title}>Welcome back  👋</Text>
-                <Text style={styles.subtitle}>Sign in to continue to your account.</Text>
+            <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === "ios" ? 'padding' : 'height'}>
 
-                <View style={styles.formContainer}>
-                    {/* EMAIL  */}
-                    <View style={styles.inputGroup}>
-                        <View style={styles.inputContainer}>
-                            <Ionicons
-                                name="mail-outline"
-                                size={20}
-                                color="rgba(255,255,255,0.8)"
-                                style={styles.inputIcon}
-                            />
-
-                            <TextInput
-                                style={styles.input}
-                                placeholder="Enter your email"
-                                placeholderTextColor={COLORS.placeholderText}
-                                value={email}
-                                onChangeText={setEmail}
-                                keyboardType="email-address"
-                                autoCapitalize="none"
-                            />
-
-                        </View>
-
+                <View style={styles.overlay}>
+                    <View style={styles.logoContainer}>
+                        <MaterialIcons name="movie-creation" size={40} color={COLORS.primary} />
                     </View>
+                    <Text style={styles.title}>Welcome back  👋</Text>
+                    <Text style={styles.subtitle}>Sign in to continue to your account.</Text>
 
-                    {/* Password */}
-                    <View style={styles.inputGroup}>
-                        <View style={styles.inputContainer}>
-                            <Ionicons
-                                name="lock-closed-outline"
-                                size={20}
-                                color="rgba(255,255,255,0.8)"
-                                style={styles.inputIcon}
-                            />
-                            <TextInput
-                                style={styles.input}
-                                placeholder="Enter your password"
-                                placeholderTextColor={COLORS.placeholderText}
-                                value={password}
-                                onChangeText={setPassword}
-                                secureTextEntry={!showPassword}
-                            />
-                            <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.eyeIcon}>
+                    <View style={styles.formContainer}>
+                        {/* EMAIL  */}
+                        <View style={styles.inputGroup}>
+                            <View style={styles.inputContainer}>
                                 <Ionicons
-                                    name={showPassword ? "eye-outline" : "eye-off-outline"}
-                                    color="rgba(255,255,255,0.8)" size={20}
+                                    name="mail-outline"
+                                    size={20}
+                                    color="rgba(255,255,255,0.8)"
+                                    style={styles.inputIcon}
                                 />
-                            </TouchableOpacity>
+
+                                <TextInput
+                                    style={styles.input}
+                                    placeholder="Enter your email"
+                                    placeholderTextColor={COLORS.placeholderText}
+                                    value={email}
+                                    onChangeText={setEmail}
+                                    keyboardType="email-address"
+                                    autoCapitalize="none"
+                                />
+
+                            </View>
+
                         </View>
 
-                    </View>
+                        {/* Password */}
+                        <View style={styles.inputGroup}>
+                            <View style={styles.inputContainer}>
+                                <Ionicons
+                                    name="lock-closed-outline"
+                                    size={20}
+                                    color="rgba(255,255,255,0.8)"
+                                    style={styles.inputIcon}
+                                />
+                                <TextInput
+                                    style={styles.input}
+                                    placeholder="Enter your password"
+                                    placeholderTextColor={COLORS.placeholderText}
+                                    value={password}
+                                    onChangeText={setPassword}
+                                    secureTextEntry={!showPassword}
+                                />
+                                <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.eyeIcon}>
+                                    <Ionicons
+                                        name={showPassword ? "eye-outline" : "eye-off-outline"}
+                                        color="rgba(255,255,255,0.8)" size={20}
+                                    />
+                                </TouchableOpacity>
+                            </View>
 
-                    <TouchableOpacity style={styles.button}
-                        onPress={handleLogin}
-                        disabled={loading}>
-                        <Text style={styles.buttonText}>
+                        </View>
+
+                        <TouchableOpacity style={styles.button}
+                            onPress={handleLogin}
+                            disabled={loading}>
+
                             {
                                 loading ? (
                                     <ActivityIndicator color={"#fff"} />
@@ -110,19 +111,21 @@ const Login = () => {
                                         <Text style={styles.buttonText}>Login</Text>
                                     )
                             }
-                        </Text>
-                    </TouchableOpacity>
-                </View>
+
+                        </TouchableOpacity>
+                    </View>
 
 
-                {/* FOOTER */}
-                <View style={styles.footer}>
-                    <Text style={styles.footerText}>Don't have an account ? </Text>
-                    <Link href="/signup" asChild>
-                        <Text style={styles.link}>SignUp</Text>
-                    </Link>
+                    {/* FOOTER */}
+                    <View style={styles.footer}>
+                        <Text style={styles.footerText}>Don't have an account ? </Text>
+                        <Link href="/signup" asChild>
+                            <Text style={styles.link}>SignUp</Text>
+                        </Link>
+                    </View>
                 </View>
-            </View>
+
+            </KeyboardAvoidingView>
         </ImageBackground >
 
     )

@@ -49,4 +49,17 @@ export default StyleSheet.create({
     scrollContent: {
         paddingBottom: 40,
     },
+    headerTitle: {
+        color: COLORS.white,
+        fontSize: 28,
+        fontWeight: "800",
+        paddingHorizontal: 18,
+        paddingTop: 20,
+        paddingBottom: 15,
+    },
+
+    logo: {
+        width: 180,
+        height: 80,
+    },
 });

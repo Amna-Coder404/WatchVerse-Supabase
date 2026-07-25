@@ -18,7 +18,7 @@
     "expo-env.d.ts",
     "store/authStore.js",
     "src/app/_layout.jsx",
-    "src/app/(tabs)/profile.jsx",
+    "src/app/(drawer)/profile.jsx",
     "src/app/(tabs)/index.jsx",
     "src/app/(tabs)/Explore.jsx",
     "src/app/(tabs)/create.jsx",

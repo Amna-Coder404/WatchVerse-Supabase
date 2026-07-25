@@ -1,9 +1,9 @@
 import { useCallback, useState } from "react";
-import { Alert, Image, Text, TouchableOpacity, View } from "react-native";
+import { Alert, Image, Text, View } from "react-native";
+import AppButton from "../../components/AppButton";
 import { DeleteReview, getMovieReviews, getMyReview } from "../../services/review";
 import styles from "../../styles/review.style";
 
-import { Ionicons } from "@expo/vector-icons";
 import { useFocusEffect } from "expo-router";
 import ReviewModal from "../../components/MovieSection/ReviewModal";
 
@@ -80,27 +80,25 @@ const MovieReviews = ({ userId, movie }) => {
 
                     {/* Action Buttons */}
                     <View style={styles.actionRow}>
-                        <TouchableOpacity onPress={() => setVisible(true)} style={styles.editButton}>
-                            <Ionicons
-                                name="create-outline"
-                                size={18}
-                                color="#fff"
-                            />
-                            <Text style={styles.actionText}>Edit Review</Text>
-                        </TouchableOpacity>
+
+                        <AppButton title="Edit Review" onPress={() => setVisible(true)} icon="pencil"
+                        />
+
                         {/* delete */}
-                        <TouchableOpacity style={styles.deleteButton} onPress={handleDeleteReview} >
-                            <Ionicons name="trash-outline" size={18} color="#fff" />
-                            <Text style={styles.deleteText}>Delete</Text>
-                        </TouchableOpacity>
+                        <AppButton
+                            title="Delete" onPress={handleDeleteReview}
+                            mode="danger"
+                            icon="delete"
+                        />
+
                     </View>
                 </View>
 
             ) : (
-                <TouchableOpacity onPress={() => setVisible(true)} style={styles.addReview}>
-                    <Text style={styles.addReviewText}>Add Review</Text>
-                </TouchableOpacity>
-
+                <AppButton
+                    title="Add Review" onPress={() => setVisible(true)}
+                    icon="pencil"
+                />
             )
             }
 

@@ -13,11 +13,7 @@ export default StyleSheet.create({
         alignItems: "center",
         backgroundColor: "#111",
     },
-    playTitle: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center"
-    },
+
     backdrop: {
         width: "100%",
         height: 320,
@@ -35,11 +31,18 @@ export default StyleSheet.create({
     content: {
         padding: 20,
     },
+    playTitle: {
+        flexDirection: "row",
+        alignItems: "center",
+    },
 
     title: {
         color: "white",
         fontSize: 30,
         fontWeight: "bold",
+
+        flex: 1,          // takes available space
+        marginRight: 15,  // space between title and button
     },
 
     info: {
@@ -96,22 +99,6 @@ export default StyleSheet.create({
         textAlign: "center",
     },
 
-    button: {
-        backgroundColor: "#7C4DFF",
-        marginVertical: 30,
-        padding: 18,
-        borderRadius: 15,
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: 12
-    },
-
-    buttonText: {
-        color: "white",
-        fontSize: 18,
-        fontWeight: "bold",
-    },
     buttonIcon: {
         fontWeight: "bold",
     },

@@ -15,6 +15,7 @@ import { useFocusEffect, useRouter } from "expo-router";
 
 import { handlePlayVideo } from "../../lib/utils";
 import { toggleWatchList } from "../../services/watchlist";
+import AppButton from "../AppButton";
 import Loader from "../Loader";
 
 
@@ -85,17 +86,12 @@ const MyWatchlist = () => {
                     {item.release_date}
                 </Text>
 
-                <TouchableOpacity style={styles.playButton} onPress={() => handlePlayVideo(item.movie_id)}>
-                    <Ionicons
-                        name="play"
-                        size={18}
-                        color={COLORS.white}
-                    />
 
-                    <Text style={styles.playText}>
-                        Watch Trailer
-                    </Text>
-                </TouchableOpacity>
+                <AppButton
+                    title="Watch Trailer"
+                    onPress={() => handlePlayVideo(item.movie_id)}
+                    icon="play"
+                />
             </View>
 
             <TouchableOpacity
@@ -108,30 +104,45 @@ const MyWatchlist = () => {
                     color={COLORS.primary}
                 />
             </TouchableOpacity>
+
         </View>
     );
     if (loading) return <Loader />
     return (
         <View style={styles.container} >
-            <View style={styles.header}>
-                <Text style={styles.headerTitle}>My WatchList</Text>
-            </View>
+            {
+                movies.length === 0 ?
+                    (
+                        <NotFound
+                            text="Your Watchlist is Empty"
+                            subText="Save movies you want to watch later"
+                        />
+                    )
+                    :
+                    (
+                        <>
+                            <View style={styles.header}>
+                                <Text style={styles.headerTitle}>My WatchList</Text>
+                            </View>
 
 
-            <FlatList
-                data={movies}
-                keyExtractor={(item) => item.id}
-                refreshing={refreshing}
-                onRefresh={onRefresh}
-                renderItem={renderItem}
-                ListEmptyComponent={
-                    <NotFound
-                        image={require("../../assets/images/empty-watchlist.png")}
-                        text="Your watchlist is empty"
-                        subText="Save movies to watch them later."
-                    />
-                }
-            />
+                            <FlatList
+                                data={movies}
+                                keyExtractor={(item) => item.id}
+                                refreshing={refreshing}
+                                onRefresh={onRefresh}
+                                renderItem={renderItem}
+                                ListEmptyComponent={
+                                    <NotFound
+                                        image={require("../../assets/images/empty-watchlist.png")}
+                                        text="Your watchlist is empty"
+                                        subText="Save movies to watch them later."
+                                    />
+                                }
+                            /></>
+                    )
+            }
+
         </View>
     )
 }

@@ -156,27 +156,7 @@ const styles = StyleSheet.create({
         marginTop: 18,
     },
 
-    editButton: {
-        flex: 1,
-        backgroundColor: "#2563EB",
-        padding: 12,
-        borderRadius: 8,
-        alignItems: "center",
-        marginRight: 8,
-    },
 
-    deleteButton: {
-        flex: 1,
-        backgroundColor: "#DC2626",
-        padding: 12,
-        borderRadius: 8,
-        alignItems: "center",
-    },
-
-    actionText: {
-        color: "#fff",
-        fontWeight: "600",
-    },
 
     ReviewCard: {
         backgroundColor: "#111827",
@@ -208,49 +188,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
 
-    editButton: {
-        flex: 1,
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
 
-        backgroundColor: COLORS.card, // or COLORS.surface
-
-        paddingVertical: 14,
-        borderRadius: 14,
-
-        borderWidth: 1,
-        borderColor: "rgba(255,255,255,0.08)",
-    },
-
-    deleteButton: {
-        flex: 1,
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-
-        backgroundColor: "rgba(255,107,107,0.12)",
-
-        paddingVertical: 14,
-        borderRadius: 14,
-
-        borderWidth: 1,
-        borderColor: "rgba(255,107,107,0.25)",
-    },
-
-    actionText: {
-        color: COLORS.white,
-        fontSize: 15,
-        fontWeight: "600",
-        marginLeft: 8,
-    },
-
-    deleteText: {
-        color: "#FF6B6B",
-        fontSize: 15,
-        fontWeight: "600",
-        marginLeft: 8,
-    },
 });
 
 export default styles;

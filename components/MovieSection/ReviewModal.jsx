@@ -6,6 +6,7 @@ import { Alert } from "react-native";
 import COLORS from "../../constants/color";
 import { createReview, updateReview } from "../../services/review";
 import styles from "../../styles/review.style";
+import AppButton from '../AppButton';
 
 
 
@@ -112,11 +113,10 @@ const ReviewModal = ({ movie, userId, onClose, visible, review, onSuccess }) => 
                         <Text style={styles.label}>Rating</Text>
                         {renderRatingPicker()}
 
-                        <TouchableOpacity onPress={handleSubmit} style={styles.submitButton}>
-                            <Text style={styles.submitText}>
-                                {review ? "Update Review" : "Submit Review"}
-                            </Text>
-                        </TouchableOpacity>
+                        <AppButton
+                            title={review ? "Update Review" : "Submit Review"}
+                            onPress={handleSubmit}
+                        />
                     </View>
                 </View>
             </View>

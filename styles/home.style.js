@@ -10,12 +10,37 @@ export default StyleSheet.create({
     },
 
     header: {
-        marginTop: 20,
-        marginBottom: 25,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        // marginBottom: 20,
+        margin: 12
+    },
+
+
+
+    logo: {
+        width: 150,
+        height: 80,
+    },
+
+
+
+    profileButton: {
+        width: 42,
+        height: 42,
+        borderRadius: 21,
+        overflow: "hidden",
+    },
+
+
+    profileImage: {
+        width: "100%",
+        height: "100%",
     },
     headerText: {
         color: COLORS.white,
-        marginBottom: 12,
+        // marginBottom: 12,
         fontSize: 25,
         fontWeight: "bold"
     },
@@ -104,5 +129,22 @@ export default StyleSheet.create({
         width: 220,
         height: 220,
         marginBottom: 20,
+    },
+    headerActions: {
+        flexDirection: "row",
+        alignItems: "center",
+        gap: 12,
+    },
+
+
+    iconButton: {
+        width: 42,
+        height: 42,
+        borderRadius: 21,
+
+        justifyContent: "center",
+        alignItems: "center",
+
+        backgroundColor: COLORS.cardBackground,
     },
 });

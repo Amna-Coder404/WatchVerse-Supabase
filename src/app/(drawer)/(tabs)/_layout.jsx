@@ -1,7 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Tabs } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import COLORS from "../../../constants/color";
+import COLORS from "../../../../constants/color";
 
 const TabLayout = () => {
     const insets = useSafeAreaInsets();
@@ -52,15 +52,7 @@ const TabLayout = () => {
                 }}
             />
 
-            <Tabs.Screen
-                name="profile"
-                options={{
-                    title: "Profile",
-                    tabBarIcon: ({ color, size }) => (
-                        <Ionicons name="person" color={color} size={size} />
-                    ),
-                }}
-            />
+
         </Tabs>
     );
 };
