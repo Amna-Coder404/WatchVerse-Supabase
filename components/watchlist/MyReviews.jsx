@@ -88,9 +88,15 @@ const MyReviews = () => {
                     subText="You have not added any movie reviews yet" />
             ) : (
                 <>
-                    <Text style={styles.headerTitle}>
-                        My Reviews
-                    </Text>
+                    <View style={styles.headerRow}>
+                        <Text style={styles.headerTitle}>
+                            My Reviews
+                        </Text>
+
+                        <Text style={styles.reviewCount}>
+                            {reviews.length} {reviews.length === 1 ? "Review" : "Reviews"}
+                        </Text>
+                    </View>
                     <FlatList
                         data={reviews}
                         keyExtractor={(item) => item.id.toString()}

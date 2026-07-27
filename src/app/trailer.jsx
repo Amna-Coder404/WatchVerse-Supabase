@@ -1,7 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { TouchableOpacity, View } from "react-native";
-import YoutubePlayer from "react-native-youtube-iframe";
+// import YoutubePlayer from "react-native-youtube-iframe";
 import styles from "../../styles/trailer.style";
 
 export default function Trailer() {
@@ -19,12 +19,13 @@ export default function Trailer() {
                 <Ionicons name="arrow-back" size={25} color="white" />
             </TouchableOpacity>
             <View style={styles.playerContainer}>
-                <YoutubePlayer
+                {/* <YoutubePlayer
                     height={220}
                     width={350}
                     play={true}
                     videoId={videoId}
-                />
+                /> */}
+                <View style={{ height: 220 }} />
             </View>
         </View>
     );

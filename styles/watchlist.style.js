@@ -103,5 +103,16 @@ export default StyleSheet.create({
         opacity: 0.7,
         color: "#9CA3AF",
     },
+    headerRow: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginBottom: 18,
+    },
 
+    reviewCount: {
+        color: COLORS.textSecondary,
+        fontSize: 15,
+        fontWeight: "600",
+    },
 });

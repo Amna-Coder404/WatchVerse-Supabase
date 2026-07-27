@@ -55,9 +55,7 @@ export default StyleSheet.create({
     avatar: {
         width: 100,
         height: 100,
-
         borderRadius: 50,
-
         borderWidth: 3,
         borderColor: COLORS.primary,
     },
@@ -65,7 +63,6 @@ export default StyleSheet.create({
 
     infoContainer: {
         alignItems: "center",
-
         marginTop: 18,
         marginBottom: 30,
     },
@@ -73,18 +70,14 @@ export default StyleSheet.create({
 
     username: {
         color: COLORS.white,
-
         fontSize: 24,
-
         fontWeight: "800",
     },
 
 
     email: {
         color: COLORS.textSecondary,
-
         fontSize: 14,
-
         marginTop: 6,
     },
 
@@ -92,9 +85,13 @@ export default StyleSheet.create({
     // Logout bottom area
     logoutContainer: {
         marginTop: "auto",
-
         marginBottom: 25,
     },
 
-
+    editText: {
+        marginTop: 10,
+        color: COLORS.primary,
+        fontSize: 15,
+        fontWeight: "600",
+    },
 });

@@ -3,7 +3,7 @@ import { create } from "zustand";
 import { supabase } from "../lib/supabase";
 
 
-export const useAuthStore = create((set) => ({
+export const useAuthStore = create((set, get) => ({
     user: null,
     session: null,
     loading: true,
@@ -112,5 +112,31 @@ export const useAuthStore = create((set) => ({
         return data;
     },
 
+    updateAvatar: async (avatarUrl) => {
 
+        const { user } = get();
+
+        if (!user) return;
+
+        const { error } = await supabase
+            .from("profiles")
+            .update({
+                avatar_url: avatarUrl,
+            })
+            .eq("id", user.id);
+
+        if (error) {
+            Alert.alert("ERROR", error.message);
+            return false;
+        }
+
+        set((state) => ({
+            profile: {
+                ...state.profile,
+                avatar_url: avatarUrl
+            },
+        }))
+
+        return true;
+    },
 }))
