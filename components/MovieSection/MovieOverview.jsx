@@ -61,16 +61,20 @@ const MovieOverview = ({
             </Text>
 
             <View style={styles.genreContainer}>
-                {movie.genres.map((genre) => (
-                    <View
-                        key={genre.id}
-                        style={styles.genre}
-                    >
-                        <Text style={styles.genreText}>
-                            {genre.name}
-                        </Text>
-                    </View>
-                ))}
+                {movie.length > 0 ? (
+                    movie.genres.map((genre) => (
+                        <View
+                            key={genre.id}
+                            style={styles.genre}
+                        >
+                            <Text style={styles.genreText}>
+                                {genre.name}
+                            </Text>
+                        </View>
+                    ))
+                ) : (
+                    <Text style={styles.castName}>No Genres found.</Text>
+                )}
             </View>
 
 
@@ -82,28 +86,32 @@ const MovieOverview = ({
 
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 {
-                    cast.map((person) => (
-                        <View
-                            key={person.id}
-                            style={styles.castCard}
-                        >
-                            <Image
-                                source={{
-                                    uri:
-                                        `https://image.tmdb.org/t/p/w185${person.profile_path}`,
-                                }}
-                                style={styles.castImage}
-                            />
-
-                            <Text
-                                numberOfLines={1}
-                                style={styles.castName}
+                    cast.length > 0 ? (
+                        cast.map((person) => (
+                            <View
+                                key={person.id}
+                                style={styles.castCard}
                             >
-                                {person.name}
-                            </Text>
+                                <Image
+                                    source={{
+                                        uri:
+                                            `https://image.tmdb.org/t/p/w185${person.profile_path}`,
+                                    }}
+                                    style={styles.castImage}
+                                />
 
-                        </View>
-                    ))
+                                <Text
+                                    numberOfLines={1}
+                                    style={styles.castName}
+                                >
+                                    {person.name}
+                                </Text>
+
+                            </View>
+                        ))
+                    ) : (
+                        <Text style={styles.castName}>No cast found.</Text>
+                    )
                 }
 
             </ScrollView>

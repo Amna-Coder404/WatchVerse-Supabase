@@ -10,14 +10,15 @@ const ProfileHeader = () => {
     return (
         <>
             <View style={styles.avatarContainer}>
+                {/* TODO later : add udpate Logic */}
                 <Image
-                    source={{
-                        uri:
-                            "https://i.pravatar.cc/150"
-                    }}
+                    source={
+                        profile?.avatar_url
+                            ? { uri: profile.avatar_url }
+                            : require("../../assets/images/tabIcons/user.png")
+                    }
                     style={styles.avatar}
                 />
-
             </View>
             {/* User Info */}
             <View style={styles.infoContainer}>

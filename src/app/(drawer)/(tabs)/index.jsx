@@ -99,7 +99,11 @@ const Home = () => {
         loadProfile();
     }, []);
 
-
+    useEffect(() => {
+        if (search.trim() === "") {
+            setSearchResults([]);
+        }
+    }, [search]);
     // Get logged-in user profile
     const loadProfile = async () => {
 

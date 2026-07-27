@@ -108,12 +108,14 @@ const MovieReviews = ({ userId, movie }) => {
                     {/* User Info */}
                     <View style={styles.userInfo}>
                         <Image
-                            source={{
-                                uri: item.profiles?.avatar_url ||
-                                    "https://i.pravatar.cc/100"
-                            }}
+                            source={
+                                item.profiles?.avatar_url
+                                    ? { uri: item.profiles.avatar_url }
+                                    : require("../../assets/images/tabIcons/login-bg.jpg")
+                            }
                             style={styles.avatar}
                         />
+
                         <Text style={styles.username}>
                             {item.profiles?.username || "Unknown User"}
                         </Text>

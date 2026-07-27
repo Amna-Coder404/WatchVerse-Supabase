@@ -34,15 +34,23 @@ const HomeHeader = ({ profile, navigation, showSearch, toggleSearch, }) => {
                     onPress={() => navigation.openDrawer()}
                 >
 
-                    <Image
+                    {/* TODO :LAter Add USer Own Image form gallary */}
+                    {/* <Image
                         source={{
                             uri:
                                 profile?.avatar_url ||
                                 "https://i.pravatar.cc/150"
                         }}
                         style={styles.profileImage}
+                    /> */}
+                    <Image
+                        source={
+                            profile?.avatar_url
+                                ? { uri: profile.avatar_url }
+                                : require("../../assets/images/tabIcons/user.png")
+                        }
+                        style={styles.profileImage}
                     />
-
                 </TouchableOpacity>
 
 

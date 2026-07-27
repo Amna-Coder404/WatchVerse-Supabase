@@ -11,6 +11,7 @@
     "@supabase/supabase-js": "^2.110.7",
     "expo": "~57.0.6",
     "expo-constants": "~57.0.5",
+    "expo-dev-client": "~57.0.9",
     "expo-device": "~57.0.1",
     "expo-font": "~57.0.1",
     "expo-glass-effect": "~57.0.1",
