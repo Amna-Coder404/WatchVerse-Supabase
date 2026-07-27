@@ -44,7 +44,23 @@ Discover movies, manage your watchlist, and share reviews.
 | Expo Image Picker | Image Selection |
 
 ---
+## Screenshots
 
+<div align="center">
+
+| Login | Sign Up |
+|--------|---------|
+| <img src="./assets/images/Screen/login.png" width="220"/> | <img src="./assets/images/Screen/signin.png" width="220"/> |
+
+| Home | Movie Details |
+|------|---------------|
+| <img src="./assets/images/Screen/feed.png" width="220"/> | <img src="./assets/images/Screen/moiveDetail.png" width="220"/> |
+
+| Watchlist | Profile |
+|-----------|---------|
+| <img src="./assets/images/Screen/watchlist.png" width="220"/> | <img src="./assets/images/Screen/profile.png" width="220"/> |
+
+</div>
 ## Installation
 
 ```bash
