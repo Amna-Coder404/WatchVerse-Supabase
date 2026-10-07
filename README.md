@@ -14,6 +14,9 @@ Discover movies, manage your watchlist, and share reviews.
 </div>
 
 ---
+## 📱 Download APK
+
+[Download WatchVerse APK](https://expo.dev/artifacts/eas/PxTJRUXBRdchdFoim5IOg0hRKh-sFZ5Hl6-TQDx224s.apk)
 
 ## Features
 
